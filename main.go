@@ -59,7 +59,7 @@ Examples:
 		if len(katexErrors.Nodes) > 0 {
 			exitCode = 1
 			latexSrc := element.DOM.Find("annotation[encoding=\"application/x-tex\"]").Text()
-			fmt.Fprintf(os.Stderr, "Error: malformatted latex src $%v$ on URL %s\n", latexSrc, element.Request.URL)
+			fmt.Fprintf(os.Stderr, "Error: malformatted latex src $%v$ on URL %s; Parse error at \"%s\"\n", latexSrc, element.Request.URL, katexErrors.First().Text())
 		}
 	})
 
