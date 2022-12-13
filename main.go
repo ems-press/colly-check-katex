@@ -37,6 +37,7 @@ Examples:
 	}()
 
 	collector := colly.NewCollector(
+		colly.UserAgent("ems.press check-katex"),
 		colly.URLFilters(
 			// only look at urls deeper than the given start url:
 			regexp.MustCompile(startUrl+".*?"),
