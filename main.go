@@ -7,6 +7,7 @@ import (
 	"regexp"
 
 	"github.com/gocolly/colly/v2"
+	"github.com/gocolly/colly/v2/extensions"
 )
 
 func main() {
@@ -45,6 +46,7 @@ Examples:
 		colly.Async(),
 	)
 	collector.Limit(&colly.LimitRule{DomainGlob: "*", Parallelism: 8})
+	extensions.Referer(collector)
 
 	// check all links
 	collector.OnHTML("a[href]", func(element *colly.HTMLElement) {
