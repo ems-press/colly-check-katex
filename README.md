@@ -15,6 +15,6 @@ stderr, verbose request information is printed to stdout.
 Examples:
 
    go run main.go > /dev/null # only print errors
-   go run main.go 2>&1 | tee errors.log # save all errors to a file
+   go run main.go 2> >(tee errors.log) # save all errors to a file
 ```
 
